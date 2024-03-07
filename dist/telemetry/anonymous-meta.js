@@ -79,7 +79,7 @@ function getAnonymousMeta() {
         isWsl: _iswsl.default,
         isCI: _ciinfo.isCI,
         ciName: _ciinfo.isCI && _ciinfo.name || null,
-        nextVersion: "0.0.2"
+        nextVersion: "14.1.2"
     };
     return traits;
 }

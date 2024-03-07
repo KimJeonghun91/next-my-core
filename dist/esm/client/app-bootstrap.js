@@ -3,7 +3,7 @@
  * sure the following scripts are executed in the correct order:
  * - Polyfills
  * - next/script with `beforeInteractive` strategy
- */ const version = "0.0.2";
+ */ const version = "14.1.2";
 window.next = {
     version,
     appDir: true

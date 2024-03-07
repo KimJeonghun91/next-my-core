@@ -215,7 +215,7 @@ class HotReloaderWebpack {
         this.previewProps = previewProps;
         this.rewrites = rewrites;
         this.hotReloaderSpan = (0, _trace.trace)("hot-reloader", undefined, {
-            version: "0.0.2"
+            version: "14.1.2"
         });
         // Ensure the hotReloaderSpan is flushed immediately as it's the parentSpan for all processing
         // of the current `next dev` invocation.
