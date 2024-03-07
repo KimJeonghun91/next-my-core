@@ -6,9 +6,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KimJeonghun91/next-my-app"
+    "url": "git+https://github.com/KimJeonghun91/next-my-core"
   },
-  "homepage": "https://github.com/KimJeonghun91/next-my-app",
+  "homepage": "https://github.com/KimJeonghun91/next-my-core",
   "types": "index.d.ts",
   "files": [
     "dist",
@@ -152,15 +152,7 @@
     "@next/polyfill-nomodule": "14.1.2",
     "@next/react-dev-overlay": "14.1.2",
     "@next/react-refresh-utils": "14.1.2",
-    "@next/swc-darwin-arm64": "14.1.2",
-    "@next/swc-darwin-x64": "14.1.2",
-    "@next/swc-linux-arm64-gnu": "14.1.2",
-    "@next/swc-linux-arm64-musl": "14.1.2",
-    "@next/swc-linux-x64-gnu": "14.1.2",
-    "@next/swc-linux-x64-musl": "14.1.2",
-    "@next/swc-win32-arm64-msvc": "14.1.2",
-    "@next/swc-win32-ia32-msvc": "14.1.2",
-    "@next/swc-win32-x64-msvc": "14.1.2",
+    "@next/swc": "14.1.2",
     "@opentelemetry/api": "1.6.0",
     "@playwright/test": "^1.35.1",
     "@taskr/clear": "1.1.0",
