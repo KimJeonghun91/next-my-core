@@ -1,6 +1,6 @@
 {
   "name": "next",
-  "version": "0.0.2",
+  "version": "14.1.2",
   "description": "next 커스텀 앱",
   "main": "./dist/server/next.js",
   "license": "MIT",
