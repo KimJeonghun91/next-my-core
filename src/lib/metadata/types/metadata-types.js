@@ -1,0 +1,6 @@
+/**
+ *
+ * Metadata types
+ *
+ */
+export {};
