@@ -1,0 +1,5 @@
+
+> @next/react-refresh-utils@14.1.2 build /Users/jh-e/Documents/dev/next/next-my-app/packages/react-refresh-utils
+> node ../../scripts/rm.mjs dist && tsc -d -p tsconfig.json
+
+rm.mjs: deleting path "/Users/jh-e/Documents/dev/next/next-my-app/packages/react-refresh-utils/dist"
