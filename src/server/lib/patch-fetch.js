@@ -367,7 +367,6 @@ export function patchFetch({ serverHooks, staticGenerationAsyncStorage, }) {
                         body: init._ogBody || init.body,
                     };
                     for (const field of requestInputFields) {
-                        // @ts-expect-error custom fields
                         init[field] = initialInit[field];
                     }
                 }

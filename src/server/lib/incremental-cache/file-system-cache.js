@@ -1,6 +1,6 @@
-import LRUCache from 'next/dist/compiled/lru-cache';
 import path from '../../../shared/lib/isomorphic/path';
 import { NEXT_CACHE_TAGS_HEADER, NEXT_DATA_SUFFIX, NEXT_META_SUFFIX, RSC_PREFETCH_SUFFIX, RSC_SUFFIX, } from '../../../lib/constants';
+import LRUCache from 'lru-cache';
 let memoryCache;
 let tagsManifest;
 export default class FileSystemCache {
