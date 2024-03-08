@@ -1,25 +1,13 @@
-### 설치
+## 개발
 
-- npm install -g pnpm@8.15.4
+https://github.com/KimJeonghun91/next-my-app
 
-- corepack enable pnpm
+- 이 레포에선 빌드가 안돼서 위 레포에서 빌드하고 있음.
 
-- pnpm install
+### TODO
 
-- pnpm run build
+- [ ] 테스트 환경 구성
 
-- cargo build --release
+- [ ] 빌드 환경 구성
 
-### next core 빌드 및 배포
-
-- cd packages/next
-
-- npm run build
-
-- npm publish
-
-### next 빌드 방법 2
-
-- npx turbo run build --scope next
-
-- npx lerna run build --scope next
+- [ ] 배포 환경 구성
