@@ -323,7 +323,7 @@ async function getBaseWebpackConfig(dir, { buildId, config, compilerType, dev = 
     const enableTypedRoutes = !!config.experimental.typedRoutes && hasAppDir;
     const bundledReactChannel = (0, _needsexperimentalreact.needsExperimentalReact)(config) ? "-experimental" : "";
     const babelConfigFile = (0, _getbabelconfigfile.getBabelConfigFile)(dir);
-    if ((0, _utils2.hasCustomExportOutput)(config)) {
+    if (!dev && (0, _utils2.hasCustomExportOutput)(config)) {
         config.distDir = ".next";
     }
     const distDir = _path.default.join(dir, config.distDir);
@@ -1468,7 +1468,7 @@ async function getBaseWebpackConfig(dir, { buildId, config, compilerType, dev = 
             new _wellknownerrorsplugin.WellKnownErrorsPlugin(),
             isClient && new _copyfileplugin.CopyFilePlugin({
                 filePath: require.resolve("./polyfills/polyfill-nomodule"),
-                cacheKey: "14.1.2",
+                cacheKey: "14.1.3",
                 name: `static/chunks/polyfills${dev ? "" : "-[hash]"}.js`,
                 minimize: false,
                 info: {
@@ -1693,7 +1693,7 @@ async function getBaseWebpackConfig(dir, { buildId, config, compilerType, dev = 
         //  - Next.js location on disk (some loaders use absolute paths and some resolve options depend on absolute paths)
         //  - Next.js version
         //  - next.config.js keys that affect compilation
-        version: `${__dirname}|${"14.1.2"}|${configVars}`,
+        version: `${__dirname}|${"14.1.3"}|${configVars}`,
         cacheDirectory: _path.default.join(distDir, "cache", "webpack"),
         // For production builds, it's more efficient to compress all cache files together instead of compression each one individually.
         // So we disable compression here and allow the build runner to take care of compressing the cache as a whole.

@@ -30,11 +30,15 @@ const _compression = /*#__PURE__*/ _interop_require_default(require("next/dist/c
 const _baseserver = require("../base-server");
 const _nextrequest = require("../web/spec-extension/adapters/next-request");
 const _ispostpone = require("./router-utils/is-postpone");
+const _parseurl = require("../../shared/lib/router/utils/parse-url");
 const _constants = require("../../shared/lib/constants");
 const _redirectstatuscode = require("../../client/components/redirect-status-code");
 const _devbundlerservice = require("./dev-bundler-service");
 const _trace = require("../../trace");
 const _ensureleadingslash = require("../../shared/lib/page-path/ensure-leading-slash");
+const _getnextpathnameinfo = require("../../shared/lib/router/utils/get-next-pathname-info");
+const _gethostname = require("../../shared/lib/get-hostname");
+const _detectdomainlocale = require("../../shared/lib/i18n/detect-domain-locale");
 function _interop_require_default(obj) {
     return obj && obj.__esModule ? obj : {
         default: obj
@@ -92,6 +96,40 @@ async function initialize(opts) {
     }
     renderServer.instance = require("./render-server");
     const requestHandlerImpl = async (req, res)=>{
+        if (!opts.minimalMode && config.i18n && config.i18n.localeDetection !== false) {
+            var _this;
+            const urlParts = (req.url || "").split("?", 1);
+            let urlNoQuery = urlParts[0] || "";
+            if (config.basePath) {
+                urlNoQuery = (0, _removepathprefix.removePathPrefix)(urlNoQuery, config.basePath);
+            }
+            const pathnameInfo = (0, _getnextpathnameinfo.getNextPathnameInfo)(urlNoQuery, {
+                nextConfig: config
+            });
+            const domainLocale = (0, _detectdomainlocale.detectDomainLocale)(config.i18n.domains, (0, _gethostname.getHostname)({
+                hostname: urlNoQuery
+            }, req.headers));
+            const defaultLocale = (domainLocale == null ? void 0 : domainLocale.defaultLocale) || config.i18n.defaultLocale;
+            const { getLocaleRedirect } = require("../../shared/lib/i18n/get-locale-redirect");
+            const parsedUrl = (0, _parseurl.parseUrl)((_this = req.url || "") == null ? void 0 : _this.replace(/^\/+/, "/"));
+            const redirect = getLocaleRedirect({
+                defaultLocale,
+                domainLocale,
+                headers: req.headers,
+                nextConfig: config,
+                pathLocale: pathnameInfo.locale,
+                urlParsed: {
+                    ...parsedUrl,
+                    pathname: pathnameInfo.locale ? `/${pathnameInfo.locale}${urlNoQuery}` : urlNoQuery
+                }
+            });
+            if (redirect) {
+                res.setHeader("Location", redirect);
+                res.statusCode = _redirectstatuscode.RedirectStatusCode.TemporaryRedirect;
+                res.end(redirect);
+                return;
+            }
+        }
         if (compress) {
             // @ts-expect-error not express req/res
             compress(req, res, ()=>{});

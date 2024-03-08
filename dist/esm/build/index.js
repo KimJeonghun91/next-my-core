@@ -297,7 +297,7 @@ export default async function build(dir, reactProductionProfiling = false, debug
         const nextBuildSpan = trace("next-build", undefined, {
             buildMode: buildMode,
             isTurboBuild: String(turboNextBuild),
-            version: "14.1.2"
+            version: "14.1.3"
         });
         NextBuildContext.nextBuildSpan = nextBuildSpan;
         NextBuildContext.dir = dir;

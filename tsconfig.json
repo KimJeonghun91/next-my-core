@@ -1,4 +1,5 @@
 {
+  "extends": "../../tsconfig-tsec.json",
   "compilerOptions": {
     "strict": true,
     "module": "esnext",
@@ -9,7 +10,6 @@
     "stripInternal": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["src"],
   "exclude": [
     "dist",
     "./*.d.ts",

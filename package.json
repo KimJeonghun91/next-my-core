@@ -1,11 +1,10 @@
 {
   "name": "next",
-  "version": "14.1.2",
-  "description": "next 커스텀 앱",
+  "version": "14.1.3",
+  "description": "커스텀 next",
   "main": "./dist/server/next.js",
   "license": "MIT",
   "repository": "vercel/next.js",
-  "homepage": "https://github.com/KimJeonghun91/next-my-core",
   "types": "index.d.ts",
   "files": [
     "dist",
@@ -91,7 +90,7 @@
     ]
   },
   "dependencies": {
-    "@next/env": "14.1.2",
+    "@next/env": "14.1.3",
     "@swc/helpers": "0.5.2",
     "busboy": "1.6.0",
     "caniuse-lite": "^1.0.30001579",
@@ -136,20 +135,20 @@
     "@babel/traverse": "7.22.5",
     "@babel/types": "7.22.5",
     "@capsizecss/metrics": "1.1.0",
-    "@edge-runtime/cookies": "4.0.2",
-    "@edge-runtime/ponyfill": "2.4.1",
-    "@edge-runtime/primitives": "4.0.2",
+    "@edge-runtime/cookies": "4.1.0",
+    "@edge-runtime/ponyfill": "2.4.2",
+    "@edge-runtime/primitives": "4.1.0",
     "@hapi/accept": "5.0.2",
     "@jest/transform": "29.5.0",
     "@jest/types": "29.5.0",
     "@mswjs/interceptors": "0.23.0",
     "@napi-rs/cli": "2.16.2",
     "@napi-rs/triples": "1.1.0",
-    "@next/polyfill-module": "14.1.2",
-    "@next/polyfill-nomodule": "14.1.2",
-    "@next/react-dev-overlay": "14.1.2",
-    "@next/react-refresh-utils": "14.1.2",
-    "@next/swc": "14.1.2",
+    "@next/polyfill-module": "14.1.3",
+    "@next/polyfill-nomodule": "14.1.3",
+    "@next/react-dev-overlay": "14.1.3",
+    "@next/react-refresh-utils": "14.1.3",
+    "@next/swc": "14.1.3",
     "@opentelemetry/api": "1.6.0",
     "@playwright/test": "^1.35.1",
     "@taskr/clear": "1.1.0",
@@ -317,16 +316,5 @@
   },
   "engines": {
     "node": ">=18.17.0"
-  },
-  "optionalDependencies": {
-    "@next/swc-darwin-arm64": "14.1.2",
-    "@next/swc-darwin-x64": "14.1.2",
-    "@next/swc-linux-arm64-gnu": "14.1.2",
-    "@next/swc-linux-arm64-musl": "14.1.2",
-    "@next/swc-linux-x64-gnu": "14.1.2",
-    "@next/swc-linux-x64-musl": "14.1.2",
-    "@next/swc-win32-arm64-msvc": "14.1.2",
-    "@next/swc-win32-ia32-msvc": "14.1.2",
-    "@next/swc-win32-x64-msvc": "14.1.2"
   }
 }

@@ -9,7 +9,7 @@ import { patchIncorrectLockfile } from "../../lib/patch-incorrect-lockfile";
 import { downloadWasmSwc, downloadNativeNextSwc } from "../../lib/download-swc";
 import { isDeepStrictEqual } from "util";
 import { getDefineEnv } from "../webpack/plugins/define-env-plugin";
-const nextVersion = "14.1.2";
+const nextVersion = "14.1.3";
 const ArchName = arch();
 const PlatformName = platform();
 const infoLog = (...args)=>{
