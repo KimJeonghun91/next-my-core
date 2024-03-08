@@ -4,10 +4,7 @@
   "description": "next 커스텀 앱",
   "main": "./dist/server/next.js",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KimJeonghun91/next-my-core"
-  },
+  "repository": "vercel/next.js",
   "homepage": "https://github.com/KimJeonghun91/next-my-core",
   "types": "index.d.ts",
   "files": [
